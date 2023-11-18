@@ -3,7 +3,7 @@ import { Text, StyleSheet, Image, TouchableOpacity, View } from "react-native";
 
 import FundoListrado from "../components/Imagens/FundoListrado";
 import FundoLogo from "../components/Imagens/FundoLogo";
-export default function TelaInicial({navigation}) {
+export default function TelaInicial({ navigation }) {
     return (
         <View>
             <FundoListrado />
@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         color: '#fff'
     },
-    containerBtn:{
+    containerBtn: {
         marginTop: '20%'
     }
 });

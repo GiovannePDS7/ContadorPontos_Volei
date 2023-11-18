@@ -5,7 +5,7 @@ import React from "react";
 export default function FundoListrado() {
     return (
         <>
-        <Image style={styles.imagem} source={Fundo}/>
+            <Image style={styles.imagem} source={Fundo}/>
         </>
         
     )

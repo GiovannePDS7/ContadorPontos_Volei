@@ -4,16 +4,19 @@ import React from "react";
 
 export default function FundoLogo2() {
     return (
-        <>
+        <View>
             <Image style={styles.imagem} source={Fundo}></Image>
-        </>
+        </View>
     )
 }
 
 const styles = StyleSheet.create({
-    imagem:{
-
-        width: '100%',
-        height: '100%'
+    imagem: {
+        marginTop: '14%',
+        alignSelf: 'center',
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: '28%',
+        height: 125
     }
 });

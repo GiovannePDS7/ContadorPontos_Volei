@@ -1,26 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import { Text, View, StyleSheet, TextInput, TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 export default function InputTimes() {
     const navigation = useNavigation();
+    const [time1, setTime1] = useState('')
+    const [time2, setTime2] = useState('')
     return (
         <View>
             <View style={styles.inputT1}>
                 <Text style={styles.txtTimes}>Time 1</Text>
-                <TextInput style={styles.InputTimes} placeholder="nome do time 1" placeholderTextColor="#fff" />
+                <TextInput style={styles.InputTimes} placeholder="nome do time 1" placeholderTextColor="#fff" value={time1} onChangeText={setTime1}/>
             </View>
             <View style={styles.inputT2}>
                 <Text style={styles.txtTimes}>Time 2</Text>
-                <TextInput style={styles.InputTimes} placeholder="nome do time 2" placeholderTextColor="#fff" />
+                <TextInput style={styles.InputTimes} placeholder="nome do time 2" placeholderTextColor="#fff" value={time2} onChangeText={setTime2} />
             </View>
             <View style={styles.btnContainer}>
-                <TouchableOpacity style={styles.btn} onPress={() => navigation.navigate('Placar')}>
+                <TouchableOpacity style={styles.btn} onPress={() => navigation.navigate('Placar', {time1, time2})}>
                     <Text style={styles.txtbtn}>Entrar!</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.btnHis}>
                     <Text style={styles.txtbtnHis}>Acessar histórico</Text>
                 </TouchableOpacity>
-
             </View>
         </View>
     );

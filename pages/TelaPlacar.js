@@ -10,6 +10,8 @@ export default function TelaPlacar({ route, navigation }) {
     const [valor2, setValor2] = useState(0);
     const [valorSet1, setValorSet1] = useState(0);
     const [valorSet2, setValorSet2] = useState(0);
+
+
     return (
         <View>
             <FundoListrado />
@@ -19,7 +21,6 @@ export default function TelaPlacar({ route, navigation }) {
                     <View style={styles.nomeTime}>
                         <Text style={styles.txtTime}>{time1}</Text>
                     </View>
-
                     <View style={styles.placar}>
                         <Text style={styles.txtPlacar}>{valor1}</Text>
                     </View>
@@ -108,7 +109,7 @@ export default function TelaPlacar({ route, navigation }) {
                     <Text style={styles.txtButton}>CONTAR NOVAMENTE</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.buttonHist} onPress={() => {
-                    navigation.navigate('Historico')
+                    navigation.navigate('Historico', {time1, time2, valorSet1, valorSet2})
                 }}>
                     <Text style={styles.txtButton}>HISTÓRICO</Text>
                 </TouchableOpacity>

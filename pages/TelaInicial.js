@@ -16,7 +16,9 @@ export default function TelaInicial({ navigation }) {
                     <TouchableOpacity style={styles.buttonTimes} onPress={() => navigation.navigate('Times')}>
                         <Text style={styles.txtTimes}>Cadastrar Os Times</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.buttonHist}>
+                    <TouchableOpacity style={styles.buttonHist} onPress={() =>{
+                        navigation.navigate('Historico')
+                    }}>
                         <Text style={styles.txtHist}>Histórico</Text>
                     </TouchableOpacity>
                 </View>

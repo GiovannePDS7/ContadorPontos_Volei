@@ -36,6 +36,7 @@ export default function TelaPlacar({ route, navigation }) {
                         </TouchableOpacity>
 
                         <TouchableOpacity style={styles.buttonSoma} onPress={() => {
+
                             setValor1(valor1 + 1)
                             if (valor1 >= 24) {
                                 if (valor1 - valor2 >= 1) {
@@ -44,7 +45,20 @@ export default function TelaPlacar({ route, navigation }) {
                                     setValor2(0)
                                 }
                             }
-                        }}>
+                            else {
+                                if (valorSet1 == 2 && valorSet2 == 2) {
+                                    if (valor2 >= 14) {
+                                        if (valor2 - valor1 >= 1) {
+                                            setValorSet2(valorSet2 + 1);
+                                            setValor2(0);
+                                            setValor1(0)
+                                        }
+                                    }
+                                }
+                            }
+
+                            }
+                        }>
                             <Text style={styles.txtButtonSoma}>+</Text>
                         </TouchableOpacity>
 
@@ -85,6 +99,18 @@ export default function TelaPlacar({ route, navigation }) {
                                     setValor2(0);
                                     setValor1(0)
                                 }
+                                if (valorSet1 == 2 && valorSet2 == 2) {
+                                    if (valor2 >= 14) {
+                                        if (valor2 - valor1 >= 1) {
+                                            setValorSet2(valorSet2 + 1);
+                                            setValor2(0);
+                                            setValor1(0)
+                                        }
+                                    }
+                                }
+                                if (valorSet2 == 3) {
+                                    navigation.navigate('Historico', { time1, time2, valorSet1, valorSet2 })
+                                }
                             }
                         }}>
                             <Text style={styles.txtButtonSoma}>+</Text>
@@ -109,7 +135,7 @@ export default function TelaPlacar({ route, navigation }) {
                     <Text style={styles.txtButton}>CONTAR NOVAMENTE</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.buttonHist} onPress={() => {
-                    navigation.navigate('Historico', {time1, time2, valorSet1, valorSet2})
+                    navigation.navigate('Historico', { time1, time2, valorSet1, valorSet2 })
                 }}>
                     <Text style={styles.txtButton}>HISTÓRICO</Text>
                 </TouchableOpacity>

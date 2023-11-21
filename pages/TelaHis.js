@@ -37,17 +37,17 @@ const TelaHis = ({ route }) => {
             <Text style={styles.title}>Histórico</Text>
             <View style={styles.grandContainer}>
                 <View style={styles.containerLeft}>
-                    <Text style={styles.time1}>{informacao.time1 || 'Não disponível'}</Text>
+                    <Text style={styles.time1}>{informacao.time1 || 'Time 1'}</Text>
                     <Text style={styles.sets}>Sets</Text>
-                    <Text style={styles.pontos}>0{informacao.valorSet2 || 'Não disponível'}</Text> 
+                    <Text style={styles.pontos}>0{informacao.valorSet1 || '0'}</Text> 
                 </View>
 
                 <View style={styles.linha}></View>
 
                 <View style={styles.containerRight}>
-                    <Text style={styles.time2}>{informacao.time2 || 'Não disponível'}</Text>
+                    <Text style={styles.time2}>{informacao.time2 || 'Time 2'}</Text>
                     <Text style={styles.sets}>Sets</Text>
-                    <Text style={styles.pontos}>0{informacao.valorSet1 || 'Não disponível'}</Text>
+                    <Text style={styles.pontos}>0{informacao.valorSet2 || '0'}</Text>
                 </View >
             </View>
         </>
